@@ -1,0 +1,454 @@
+/* main css */ 
+
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+body {
+    background-color: #0A1828;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+h3{
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+hr{
+    border-color: #BFA181;
+
+}
+
+.right{
+  float:right;
+}
+
+.left{
+  text-align: left;
+}
+
+/* header */
+
+.header {
+    padding: 1.5rem;
+    padding-bottom: 1rem;
+    background-color: #0F243D;
+    border-bottom: 1px solid #BFA181;
+    margin-bottom: 2rem;
+    height: 4rem;
+    padding-top: 1rem;
+  }
+
+.header > .container {
+    display: flex;
+    gap: 4.5rem;
+  }
+
+.logo, .user{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.logo img{
+  width: 5rem;
+  height: 4.5rem;
+}
+
+.search {
+    display: block;
+}
+
+.search > label {
+    background-color: #0A1828;
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 4px;
+    width: 20rem;
+  }
+
+.search input {
+    width: 10rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.menu {
+    margin-left: auto;
+    position: relative;
+  }
+
+.menu img {
+  height: 3.6rem;
+}
+  
+/* avatars */
+
+.avatar {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar img {
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid #BFA181;
+  }
+
+.avatar.avatar_extrasmall img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.avatar.avatar_small img {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.avatar.avatar_medium img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.avatar.avatar_big img {
+  width: 8rem;
+  height: 8rem;
+}
+
+/* topics */
+
+.topics{
+    background-color: #0F243D;
+    margin: 1rem;
+    padding: 0.5rem;
+    padding-top: 0.2rem;
+    border-radius: 1rem;
+}
+
+.topics-list {
+  list-style: none;
+}
+
+.topics-list li a {
+  display: flex;
+  justify-content: space-between;
+    margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+.topics-list li a:active,
+.topics-list li a:hover {
+  color: #BFA181;
+}
+
+/* activity */
+
+.activity{
+    background-color: #0F243D;
+    margin: 1rem;
+    padding: 0.8rem;
+    padding-top: 0.2rem;
+    border-radius: 1rem;
+}
+
+.activity > .container{
+  display: flex;
+  gap: 0.7rem;
+}
+
+/* posts and comments */
+
+.post-field{
+    background-color: #0F243D; 
+    margin-bottom: 2.4rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    padding-top: 1rem;
+}
+
+.post-header{
+  margin-top: 1rem;
+}
+
+.post-header input[type=submit]{
+  margin-bottom: 1rem;
+  color:white;
+  width: 8rem;
+  height: 3rem;
+  background-color: #0F243D;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: none;
+  font-size: 105%;
+}
+
+.post-field > .container{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+ 
+.rr{
+  margin-left: auto;
+  position: relative;
+}
+
+.rr img{
+  height: 2rem;
+  width: 2rem;
+}
+
+.post-content{
+    margin: 1rem 0;
+    margin-bottom: 0.3rem;
+}
+
+.post-container{
+  background-color: #0F243D;
+}
+
+.post-text{
+  background-color: #0F243D;
+  padding: 2rem;
+  padding-top: 1rem;
+  margin: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  border-radius: 1rem;
+
+}
+
+.post-text > .container{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.post-text > .container-center{
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.comment{
+  background-color: #0F243D;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.comment-form input::placeholder{
+  color: white;
+}
+
+.comment > .container{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+
+/* forms */
+
+.login-form {
+  display: block;
+  background-color: #0F243D;
+  padding: 1rem;
+  padding-top: 0.3rem;
+  text-align: center;
+  border-radius: 1rem;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.login-form form{
+    display: inline-block;
+}
+
+.login-form label {
+  display: inline-block;
+  width: 8rem;
+  text-align: right;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.login-form select{
+  background-color: #0A1828;
+  color: white;
+  border-radius: 1rem;
+}
+
+.login-form input{
+  border: solid #0A1828;
+  border-radius: 1rem;
+  background-color: #0A1828;
+  color: white;
+}
+
+.login-form input[type=submit]{
+  color:#0A1828;
+  margin-top: 0.7rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: white;
+  font-weight: bold;
+}
+
+.login-form textarea{
+  background-color: #0A1828;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  width: 100%;
+  height: 15em;
+  resize: none;
+  padding: 1rem;
+}
+
+.post_name input{
+  width: 103%;
+    padding: 0.5rem;
+}
+.post_name label{
+    text-align: center;
+}
+
+.description label{
+    text-align: center;
+}
+
+.comment-form input{
+  background-color: #0F243D;
+  border: none;
+  color: white;
+  margin: 1rem;
+  height: 2rem;
+  border-radius: 1rem;
+  width: 80%;
+  padding-left: 1rem;
+}
+
+.register-form {
+  display: block;
+  background-color: #0F243D;
+  padding: 1rem;
+  padding-top: 0.3rem;
+  text-align: center;
+  border-radius: 1rem;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+
+.register-form form{
+    display: inline-block;
+}
+
+.register-form label{
+  display: inline-block;
+  width: 5rem;
+  text-align: right;
+}
+
+
+.register-form input{
+  margin: 0.2rem;
+  border: solid #0A1828;
+  border-radius: 1rem;
+  background-color: #0A1828;
+  color: white;
+}
+
+.register-form input[type=submit]{
+  color:#0A1828;
+  margin-top: 0.7rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: white;
+  font-weight: bold;
+}
+
+/* Profile */
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+
+.about{
+  background-color: #0A1828;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.update input[type=submit]{
+  color:#0A1828;
+  margin-top: 0.7rem;
+  width: 8rem;
+  height: 2rem;
+  background-color: white;
+  font-weight: bold;
+  border-radius: 1rem;
+}
+
+.helptext{
+  visibility: hidden;
+}
+
+/* width */
+
+@media (max-width: 1000px) {
+  .home-container {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr; 
+  }
+
+  .second {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+   
+  }
+
+  .search > label {
+    background-color: #0A1828;
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    width: 10rem;
+  }
+
+  .login-form {
+    display: block;
+    background-color: #0F243D;
+    padding: 1rem;
+    padding-top: 0.3rem;
+    text-align: center;
+    border-radius: 1rem;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+}
+
+
+
+
+
+
+

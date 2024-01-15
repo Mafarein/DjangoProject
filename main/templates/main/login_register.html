@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if page == 'login' %}
+
+<div class="login-form">
+    <div>
+        <h1>Login</h1>
+        <hr>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div>
+                <label>Email</label>
+                <input type="text" name="email" />
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" name="password"/>
+            </div>
+            <small class="left">{% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </small>
+            <input type="submit" value="Login" />
+        </form>
+
+        <p>Haven't signed up yet?</p>
+        <a href="{% url 'register' %}">Sign up</a>
+
+        <p>Forgot your password?</p>
+        <a href="{% url 'password-reset' %}">Reset password</a>
+
+    </div>
+
+    {% else %}
+
+    <div class="register-form">
+        <h1>Register</h1>
+        <hr>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Register" />
+        </form>
+
+        <p>Already signed up?</p>
+        <a href="{% url 'login' %}">Login</a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock content %}

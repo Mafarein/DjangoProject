@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div>
+    <div class="post-text">
+        <div class="container">
+
+            <span class="avatar avatar_medium">
+                <img src="{{post.created_by.avatar.url}}"/>
+            </span>
+
+            <h2>{{post.created_by.username}}</h2>
+
+            <span class="rr">
+                {{post.topic}}
+            </span>
+
+        </div>
+
+        <h1>{{post.name}}</h1>
+
+        <p>{{post.description}}</p>
+        <div class="container">
+            {{post.created|timesince}} ago
+
+            <span class="rr">
+                <a href="{% url 'home' %}"><img src="{% static 'images/back.svg' %}"/></a>
+                {% if post.created_by == request.user %}
+                <a href="{% url 'update-post' post.id %}">
+                    <img src="{% static 'images/edit.svg' %}"/>
+                </a>
+                <a href="{% url 'delete-post' post.id %}"><img src="{% static 'images/delete.svg' %}"/></a>
+                {% endif %}
+            </span>
+        </div>
+
+    </div>
+
+
+    <h3>Conversation</h3>
+    <hr>
+
+    {% if request.user.is_authenticated %}
+    <div class="comment-form">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" name="body" placeholder="Write your message here..." />
+        </form>
+    </div>
+    {% endif %}
+
+    {% for comment in post_comments %}
+        <div class="comment">
+            <div class="container">
+                <span class="avatar avatar_extrasmall">
+                    <img src="{{comment.user.avatar.url}}"/>
+                </span>
+                {{comment.user.username}}
+                <a href="{% url 'user-profile' user.id%}">{{comment.user.name}}</a>
+                <span class="rr">
+                    {{comment.created|timesince}} ago
+                </span>
+            </div>
+            <div class="container">
+                <p>{{comment.body}}</p>
+                <div class="rr">
+                    {% if request.user == comment.user %}
+                        <a href="{% url 'delete-comment' comment.id %}"><img src="{% static 'images/delete.svg' %}"/></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+</div>
+
+
+{% endblock %}

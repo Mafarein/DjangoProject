@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="login-form">
+    <h2>Create/Edit post</h2>
+    <hr>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <div>
+            <label for="post_topic">Topic</label>
+            {{form.topic}}
+        </div>
+
+        <div class="post_name">
+            <label for="post_name" >Post name</label>
+            {{form.name}}
+        </div>
+
+
+        <div class="description">
+            <label for="post_description">Description</label>
+            {{form.description}}
+        </div>
+
+
+ 
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+{% endblock content %}

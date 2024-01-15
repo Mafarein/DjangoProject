@@ -1,0 +1,48 @@
+{% load static %}
+<div class="post-header">
+    <a href="{% url 'create-post' %}"><input type="submit" value="Create Post" /></a>
+
+    {% for post in posts %}
+
+    <div class="post-field">
+        <div class="container">
+
+            <span class="avatar avatar_small">
+                <img src="{{post.created_by.avatar.url}}"
+                height="30"/>
+            </span>
+
+            <a href="{% url 'user-profile' post.created_by.id %}">
+                {{post.created_by.username}}
+            </a>
+
+            <span class="rr">
+                {{post.topic.name}}
+            </span>
+
+        </div>
+
+        <hr>
+
+        <div class="post-content">
+
+            <h4><a href="{% url 'post' post.id %}">{{post.name}}</a></h4>
+            <small>{{ post.description|truncatechars:255 }}</small>
+            <p></p>
+
+            <div>
+                <span>
+                    <a href="{% url 'post' post.id %}">{{post.comment_set.all.count}} comments</a>
+                </span>
+                <span class="right">
+                    <small>{{post.created|timesince}} ago</small>
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+</div>

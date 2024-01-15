@@ -1,0 +1,26 @@
+<div class="activity">
+
+    <h3>Recent Activity</h3>
+    <hr>
+    {% for comment in post_comments %}
+    <div class="container">
+
+        <span class="avatar avatar_extrasmall">
+            <img src="{{comment.user.avatar.url}}"/>
+        </span>
+
+        <div>
+            <div>
+            <small><a href="{% url 'user-profile' comment.user.id %}">{{comment.user.username}}</a>  {{comment.created|timesince}} ago</small>
+            </div>
+            <div><small>replied to "<a href="{% url 'post' comment.post.id %}">{{comment.post|truncatechars:30}}</a>"</small></div>
+        </div>
+
+    </div>
+
+    <p><a href="{% url 'post' comment.post.id %}">{{comment.body|truncatechars:155}}</a></p>
+    <hr>
+
+    {% endfor %}
+
+</div>

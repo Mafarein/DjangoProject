@@ -1,0 +1,9 @@
+
+Hi {{ user.username }},
+
+<p> You created an account on Tftforum.com, you need to verify your email. Please click on the link below to verify your email. </p>
+
+<p> {{ request.scheme }}://{{ domain }}{% url 'verify-email-confirm' uidb64=uid token=token %} </p>
+
+The TFTforum Team
+   

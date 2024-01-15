@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="post-text">
+    <div class="container-center">
+        <span class="avatar avatar_big">
+            <img src="{{user.avatar.url}}"/>
+        </span>
+        <h1>{{user.username}}</h1>
+    </div>
+    <h4>About</h4>
+    <div class="about">
+        {{user.bio}}
+    </div>
+
+    {% if request.user == user %}
+    <a class="update" href="{% url 'update-profile' %}"><input type="submit" value="Update Profile" /></a>
+    {% endif %}
+
+</div>
+
+<h3>User activity</h3>
+
+
+<div class="profile-container">
+
+    <div class="second">
+       {% include 'main/feed_component.html' %} 
+    </div>
+
+    <div>
+        {% include 'main/activity_component.html' %} 
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="login-form">
+    <h2>Update profile</h2>
+    <hr>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form__group">
+        <label for="profile_pic">Avatar: </label>
+        {{form.avatar}}
+    </div>
+    <div>
+        <label for="user_name">Username:</label>
+        {{form.username}}
+    </div>
+
+    <div>
+        <label for="post_topic">Email:</label>
+        {{form.email}}
+    </div>
+
+    <div class="description">
+        <label for="post_description">Description</label>
+        {{form.bio}}
+    </div>
+
+    <a href="{% url 'home' %}"><input type="submit" value="Back" /></a>
+    <input type="submit" value="Update" />
+</form>
+</div>
+
+
+{% endblock content %}

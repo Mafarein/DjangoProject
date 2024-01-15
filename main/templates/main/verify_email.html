@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="login-form">
+<h1>You need to verify your email</h1>
+<form method="post">
+    {% csrf_token %}
+    <input class="btn btn-primary max-btn" type="submit" value="Verify">
+</form>
+</div>
+
+{% endblock content %}
